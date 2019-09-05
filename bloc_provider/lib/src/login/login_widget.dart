@@ -67,7 +67,6 @@ class _LoginBodyState extends State<LoginBody> {
                     obscureText: true,
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock),
-                      hintText: 'password123',
                       labelText: 'Password *',
                       errorText: snapshot.data,
                     ),

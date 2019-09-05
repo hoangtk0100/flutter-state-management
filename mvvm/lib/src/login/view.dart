@@ -72,7 +72,6 @@ class _WidgetBodyState extends State<WidgetBody> {
                     obscureText: true,
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock),
-                      hintText: 'example@gmail.com',
                       labelText: 'Password *',
                       errorText: snapshot.data,
                     ),
@@ -85,25 +84,24 @@ class _WidgetBodyState extends State<WidgetBody> {
               height: 50.0,
               width: 200.0,
               child: StreamBuilder<bool>(
-                stream: loginViewModel.btnLoginStream,
-                builder: (context, snapshot) {
-                  return RaisedButton(
-                    onPressed: snapshot.data == true ? () {} : null,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    color: Colors.blue,
-                    child: Text(
-                      'Login',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
+                  stream: loginViewModel.btnLoginStream,
+                  builder: (context, snapshot) {
+                    return RaisedButton(
+                      onPressed: snapshot.data == true ? () {} : null,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
                       ),
-                    ),
-                  );
-                }
-              ),
+                      color: Colors.blue,
+                      child: Text(
+                        'Login',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
+                    );
+                  }),
             ),
           ],
         ));

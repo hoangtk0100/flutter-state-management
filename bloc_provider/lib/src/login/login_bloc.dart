@@ -7,12 +7,13 @@ class LoginBloc extends ChangeNotifier {
 
   final emailValidation =
       StreamTransformer<String, String>.fromHandlers(handleData: (email, sink) {
-    sink.add(Validator.isEmail(email));
+    sink.add(Validator.isEmail(email) ? null : invalidEmailMessage);
   });
 
   final passwordValidation = StreamTransformer<String, String>.fromHandlers(
       handleData: (password, sink) {
-    sink.add(Validator.isPassword(password));
+    sink.add(
+        Validator.isPassword(password) ? null : invalidPasswordFormatMessage);
   });
 
   Stream<String> get emailStream =>
@@ -33,8 +34,7 @@ class LoginBloc extends ChangeNotifier {
   LoginBloc() {
     Observable.combineLatest2(_emailSubject, _passwordSubject,
         (email, password) {
-      return Validator.isEmail(email) == null &&
-          Validator.isPassword(password) == null;
+      return Validator.isEmail(email) && Validator.isPassword(password);
     }).listen((enable) {
       btnLoginSink.add(enable);
     });

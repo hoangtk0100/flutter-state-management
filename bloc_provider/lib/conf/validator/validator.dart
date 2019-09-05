@@ -13,20 +13,21 @@ bool isMatchedPattern(String pattern, dynamic input) {
   return true;
 }
 
+class Result {
+  bool isTrue;
+  String message;
+}
+
 class Validator {
-  static String isEmail(String email) {
-    return isMatchedPattern(emailPattern, email) ? null : invalidEmailMessage;
+  static bool isEmail(String email) {
+    return isMatchedPattern(emailPattern, email);
   }
 
-  static String isPassword(String password) {
-    if (password == null) {
-      return invalidPasswordMessage;
-    }
-
-    if (password.length < 6) {
-      return invalidPasswordFormatMessage;
+  static bool isPassword(String password) {
+    if (password == null || password.length < 6) {
+      return false;
     }
     
-    return null;
+    return true;
   }
 }
