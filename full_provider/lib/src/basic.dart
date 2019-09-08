@@ -30,11 +30,11 @@ class BasicWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ConsumerWidget(),
+            _ConsumerWidget(),
             SizedBox(
               height: 20.0,
             ),
-            WithoutConsumerWidget(),
+            _WithoutConsumerWidget(),
           ],
         ),
       ),
@@ -42,7 +42,7 @@ class BasicWidget extends StatelessWidget {
   }
 }
 
-class ConsumerWidget extends StatelessWidget {
+class _ConsumerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<User>(
@@ -51,7 +51,7 @@ class ConsumerWidget extends StatelessWidget {
   }
 }
 
-class WithoutConsumerWidget extends StatelessWidget {
+class _WithoutConsumerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     User user = Provider.of<User>(context);
