@@ -32,9 +32,12 @@ class ChangeNotifierProviders extends StatelessWidget {
     //   )
     // ], child: MaterialApp(home: ChangeNotifierWidget()));
 
-    return ChangeNotifierProvider<Counter>(
-      builder: (context) => Counter(),
-      child: ChangeNotifierWidget(),
+    return Scaffold(
+      appBar: customAppBar('ChangeNotifier Provider'),
+      body: ChangeNotifierProvider<Counter>(
+        builder: (context) => Counter(),
+        child: ChangeNotifierWidget(),
+      ),
     );
   }
 }
@@ -43,9 +46,8 @@ class ChangeNotifierWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Counter counterBloc = Provider.of<Counter>(context);
-    return Scaffold(
-      body: Container(
-          child: Column(
+    return Container(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
@@ -69,7 +71,7 @@ class ChangeNotifierWidget extends StatelessWidget {
             ],
           )
         ],
-      )),
+      ),
     );
   }
 }

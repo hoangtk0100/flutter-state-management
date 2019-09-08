@@ -4,9 +4,7 @@ class FutureProviders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Future Provider'),
-      ),
+      appBar: customAppBar('Future Provider'),
       body: FutureProvider<String>.value(
         initialData: 'noname',
         value: getName(),
