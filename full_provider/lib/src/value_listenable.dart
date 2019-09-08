@@ -8,9 +8,7 @@ class ValueListenableProviders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Value Listenable Provider'),
-        ),
+        appBar: customAppBar('Value Listenable Provider'),
         body: Provider<Counter>(
           builder: (context) => Counter(),
           child: Consumer<Counter>(

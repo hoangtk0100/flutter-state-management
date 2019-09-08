@@ -4,9 +4,7 @@ class StreamProviders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Stream Provider'),
-      ),
+      appBar: customAppBar('Stream Provider'),
       body: StreamProvider<String>.value(
         initialData: 'noname',
         value: getName(),

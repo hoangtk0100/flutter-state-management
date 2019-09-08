@@ -23,9 +23,7 @@ class BasicWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Basic Provider'),
-      ),
+      appBar: customAppBar('Basic Provider'),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -60,4 +58,10 @@ class _WithoutConsumerWidget extends StatelessWidget {
       child: Text(user.fullName),
     );
   }
+}
+
+Widget customAppBar(title) {
+  return AppBar(
+    title: title,
+  );
 }

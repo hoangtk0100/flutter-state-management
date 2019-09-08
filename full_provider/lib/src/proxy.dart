@@ -35,9 +35,7 @@ class ProxyProviders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Proxy Provider'),
-      ),
+      appBar: customAppBar('Proxy Provider'),
       body: MultiProvider(
         providers: [
           // Provider<CounterApi>.value(

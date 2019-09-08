@@ -25,9 +25,7 @@ class MultipleProviderWithChangeNotifier extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Multiple Provider'),
-      ),
+      appBar: customAppBar('Multiple Provider'),
       body: MultiProvider(
           providers: [
             ChangeNotifierProvider(builder: (_) => Counter1()),
